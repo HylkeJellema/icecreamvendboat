@@ -1,9 +1,14 @@
-class Boatscpu {
+class cpu {
+  float x_, y_;
+  PImage img;
 
-  Boatscpu () {
+  cpu (float xpos, float ypos) {
+    img = loadImage("img/boat1.png");
+    x_ = xpos;
+    y_ = ypos;
   }
 
-  void display () {
-    quad(38, 31, 86, 20, 69, 63, 30, 76);
+  void display() {
+    image(img, x_, y_);
   }
 }
