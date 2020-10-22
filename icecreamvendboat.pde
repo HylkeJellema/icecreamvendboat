@@ -1,4 +1,3 @@
-
 import processing.video.*;
 Movie waterVid;
 Player player;
@@ -7,7 +6,7 @@ Bar bar;
 
 float stage;
 float boatcount = 10;
-cpu[] boat = new cpu[10];
+cpu[] boat = new cpu[10]; 
 
 
 void setup() {
@@ -37,9 +36,9 @@ void draw() {
   if (stage==2) {
     image(waterVid, 0, 0, 1280, 720);
     player.display();
-    for (int i=0; i<boatcount; i++) {
+    for (int i=0; i<boatcount; i++) { 
       boat[i].display();
-    }
+    } 
     bar.display();
   }
 }
@@ -51,6 +50,13 @@ void movieEvent(Movie m) {
 
 void keyPressed() {
   bar.barPressed();
+
+  if (key == 'a') {
+    player.left();
+  }  
+  if (key == 'd') {
+    player.right();
+  }
 }
 
 void keyReleased() {
