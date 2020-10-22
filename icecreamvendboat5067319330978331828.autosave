@@ -1,8 +1,8 @@
 import processing.video.*;
 Movie waterVid;
 Player player;
-startscreen startscreen;
-endscreen endscreen;
+startscreen startscreen1;
+endscreen endscreen1;
 Bar bar;
 
 timer countDownTimer;
@@ -17,8 +17,8 @@ void setup() {
   size(1280, 720);
   waterVid = new Movie(this, "vid/water.mp4");
   player = new Player();
-  startscreen = new startscreen();
-  endscreen = new endscreen();
+  startscreen1 = new startscreen();
+  endscreen1 = new endscreen();
 
   bar = new Bar();
 
@@ -29,14 +29,14 @@ void setup() {
   timeLeft = 60;
 
   for (int i=0; i<boatcount; i++) {
-    boat[i] = new cpu(random (100, width-100), random (100, height-100), random (360));
+    boat[i] = new cpu(random (0, width), random (0, height));
   }
 }
 
 void draw() {
   //alles voor start scherm
   if (stage == 1) {
-    startscreen.display();
+    startscreen1.display();
     if (keyPressed) {
       stage = stage +1;
     }
@@ -50,7 +50,6 @@ void draw() {
     } 
     bar.display();
     //timer
-
     String s = "Time left: " + timeLeft;
     textAlign(LEFT);
     textSize(20);
@@ -67,7 +66,7 @@ void draw() {
 
     //tijd is om 
     if (stage==3) {
-      endscreen.display();
+      endscreen1.display();
      
     }
     
@@ -79,8 +78,8 @@ void movieEvent(Movie m) {
   m.read();
 }
 
-
 void keyPressed() {
+  bar.barPressed();
 
   if (key == 'a') {
     player.left();
@@ -88,4 +87,8 @@ void keyPressed() {
   if (key == 'd') {
     player.right();
   }
+}
+
+void keyReleased() {
+  bar.barReleased();
 }

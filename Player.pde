@@ -3,7 +3,7 @@ class Player {
   float xPos, yPos;
   float direction;
   PImage boat;
-  BoatParticles parti;
+
   int speed;
 
 
@@ -13,8 +13,6 @@ class Player {
     direction = 0;
     speed = 1;
     boat = loadImage("img/player.png");
-    parti = new BoatParticles(); //kan weg
-    parti.startGenerate(); // kan weg
   }
   void display() {
     pushMatrix();
@@ -24,9 +22,21 @@ class Player {
     image(boat, 0, 0);
     imageMode(CORNER);
     popMatrix();
-    if (direction < 90 && direction >0) {
+    if (direction <= 90 && direction >= 0) {
       xPos = xPos + (direction/90);
-      yPos = yPos  - (90/direction);
+      yPos = yPos  - (1 - direction/90);
+    }
+    if (direction > 90 && direction <=180) {
+      xPos = xPos + (1-(direction-90)/90);
+      yPos = yPos  + ((direction-90)/90);
+    }
+    if (direction < 270 && direction >180) {
+      xPos = xPos - ((direction-180)/90);
+      yPos = yPos  + 1 - ((direction-180)/90);
+    }
+    if (direction <=360 && direction >=270) {
+      xPos = xPos - (1-(direction-270)/90);
+      yPos = yPos  - ((direction-270)/90);
     }
   }
   void left() {
