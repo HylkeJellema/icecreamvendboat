@@ -2,6 +2,7 @@ import processing.video.*;
 Movie waterVid;
 Player player;
 startscreen startscreen1;
+endscreen endscreen1;
 Bar bar;
 
 timer countDownTimer;
@@ -17,6 +18,7 @@ void setup() {
   waterVid = new Movie(this, "vid/water.mp4");
   player = new Player();
   startscreen1 = new startscreen();
+  endscreen1 = new endscreen();
 
   bar = new Bar();
 
@@ -65,12 +67,8 @@ void draw() {
 
     //tijd is om 
     if (stage==3) {
-      background(255);
-      String t = "Time is up. Your score is: ";
-      textAlign(LEFT);
-      textSize(50);
-      fill(0);
-      text(t, 600, 350);
+      endscreen1.display();
+     
     }
     
   }
