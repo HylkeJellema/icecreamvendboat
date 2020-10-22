@@ -4,7 +4,8 @@
 class Bar {
 
   float barLength;
-  float progress;
+  int progress;
+  int score;
 
 
 
@@ -46,6 +47,12 @@ class Bar {
   }
 
   void addProgress() {
-    progress = progress + 20;
+    progress = progress + 26;
   }
+  
+  void result() {
+    score = progress / 26;
+  }
+  
+  
 }
