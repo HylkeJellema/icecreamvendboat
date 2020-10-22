@@ -15,5 +15,5 @@ class cpu {
     rotate(rotation);
     image(img, 0, 0);
     popMatrix();
-    }
+  }
 }

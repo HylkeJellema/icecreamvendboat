@@ -1,13 +1,12 @@
-class endscreen{
- PImage endscreen;
- 
-  endscreen(){
+class endscreen {
+  PImage endscreen;
+
+  endscreen() {
     endscreen = loadImage ("Artboard 2.png");
   }
-  
-  void display(){
+
+  void display() {
     image(endscreen, 0, 0, 1280, 720);
-    //String score = "Score: "; 
+    //String score = "Score: ";
   }
-  
 }
