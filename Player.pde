@@ -4,26 +4,42 @@ class Player {
   int direction;
   PImage boat;
   BoatParticles parti;
+  int speed;
 
 
   Player() {
-    xPos= 600;
+    xPos= 640;
     yPos= 600;
     direction = 0;
+    speed = 1;
     boat = loadImage("img/player.png");
     parti = new BoatParticles(); //kan weg
     parti.startGenerate(); // kan weg
   }
   void display() {
-    image(boat, xPos, yPos);
+    pushMatrix();
+    imageMode(CENTER);
+    translate(xPos, yPos);
+    rotate(radians(direction));
+    image(boat, 0, 0);
+    imageMode(CORNER);
+    popMatrix();
+    if (direction < 90 && direction >0) {
+      xPos = xPos - (direction/90);
+    }
   }
   void left() {
     if (direction == 0) {
-      direction = 359;
+      direction = 360-speed;
     } else {
-      direction--;
+      direction= direction - 1*speed;
     }
   }
   void right() {
+    if (direction == 359) {
+      direction = speed;
+    } else {
+      direction= direction + 1*speed;
+    }
   }
 }
