@@ -9,7 +9,7 @@ timer countDownTimer;
 int timeLeft;
 float stage;
 float boatcount = 10;
-cpu[] boat = new cpu[10]; 
+People[] boat = new People[10]; 
 
 
 void setup() {
@@ -27,7 +27,7 @@ void setup() {
   timeLeft = 60;    //timer in 60 sec
 
   for (int i=0; i<boatcount; i++) {
-    boat[i] = new cpu(random (100, width-100), random (100, height-100), random (360));
+    boat[i] = new People(random (100, width-100), random (100, height-100), random (360));
   }
 }
 

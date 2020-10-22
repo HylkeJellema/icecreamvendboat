@@ -1,9 +1,9 @@
-class cpu {
+class People {
   float x_, y_, rotation;
   PImage img;
   boolean showing;
 
-  cpu (float xpos, float ypos, float rotate) {
+  People (float xpos, float ypos, float rotate) {
     img = loadImage("img/people.png");
     x_ = xpos;
     y_ = ypos;
@@ -22,7 +22,6 @@ class cpu {
   }
 
   void checkRemove() {
-    println(dist(player.posX(),player.posY(),x_,y_));
     if ((dist(player.posX(),player.posY(),x_,y_))<80 && showing) {
       showing=false;
       bar.addProgress();
