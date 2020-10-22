@@ -1,9 +1,10 @@
 class Player {
 
-  float xPos, yPos, direction;
+  float xPos, yPos;
+  int direction;
   PImage boat;
   BoatParticles parti;
-  
+
 
   Player() {
     xPos= 600;
@@ -13,10 +14,16 @@ class Player {
     parti = new BoatParticles(); //kan weg
     parti.startGenerate(); // kan weg
   }
-  void display(){
-  image(boat,xPos,yPos);
-  
+  void display() {
+    image(boat, xPos, yPos);
   }
-  void move(){
+  void left() {
+    if (direction == 0) {
+      direction = 359;
+    } else {
+      direction--;
+    }
+  }
+  void right() {
   }
 }

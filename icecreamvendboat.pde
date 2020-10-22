@@ -15,7 +15,8 @@ void setup() {
   waterVid = new Movie(this, "vid/water.mp4");
   player = new Player();
   startscreen1 = new startscreen();
-    
+  bar = new Bar();
+
   waterVid.loop();
 
   stage = 1;
@@ -36,9 +37,10 @@ void draw() {
   if (stage==2) {
     image(waterVid, 0, 0, 1280, 720);
     player.display();
+    bar.display();
   }
 
-  bar = new Bar();
+
 }
 
 
@@ -46,10 +48,10 @@ void movieEvent(Movie m) {
   m.read();
 }
 
-void keyPressed(){
+void keyPressed() {
   bar.barPressed();
 }
 
-void keyReleased(){
+void keyReleased() {
   bar.barReleased();
 }
