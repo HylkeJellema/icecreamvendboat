@@ -20,9 +20,7 @@ void setup() {
 
   stage = 1;
   for (int i=0; i<boatcount; i++) {
-
-    boat[i] = new cpu(random (0, width), random (0, height));
-
+    boat[i] = new cpu(random (width), random (height), random (360));
   }
 }
 
