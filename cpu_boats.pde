@@ -1,5 +1,5 @@
 class Boatscpu {
-imgage
+
   Boatscpu () {
   }
 

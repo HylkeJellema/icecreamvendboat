@@ -19,7 +19,7 @@ void setup() {
   waterVid.loop();
 
   stage = 1;
-  if (int i=0; i<boatcount; i++) {
+  for (int i=0; i<boatcount; i++) {
     boat[i] = new Boatscpu();
   }
 }
@@ -37,17 +37,10 @@ void draw() {
     image(waterVid, 0, 0, 1280, 720);
     player.display();
   }
-=======
+
   bar = new Bar();
 }
 
-void draw() {
-  image(waterVid, 0, 0, 1280, 720);
-  
-  player.display();
-  bar.display();
->>>>>>> Stashed changes
-}
 
 void movieEvent(Movie m) {
   m.read();
