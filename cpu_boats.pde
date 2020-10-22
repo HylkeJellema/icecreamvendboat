@@ -22,8 +22,10 @@ class cpu {
   }
 
   void checkRemove() {
-    if (((player.posX()- x_)<20) && ((player.posY()- y_)<20)) {
+    println(dist(player.posX(),player.posY(),x_,y_));
+    if ((dist(player.posX(),player.posY(),x_,y_))<80 && showing) {
       showing=false;
+      bar.addProgress();
     }
   }
 }
