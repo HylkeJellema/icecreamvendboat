@@ -11,11 +11,9 @@ class cpu {
 
   void display() {
     pushMatrix();
-//    imageMode(CENTER);
     translate(x_, y_);
     rotate(rotation);
     image(img, 0, 0);
-//    imageMode(CORNER);
     popMatrix();
     }
 }
