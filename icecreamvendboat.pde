@@ -4,7 +4,6 @@ Player player;
 startscreen startscreen;
 endscreen endscreen;
 Bar bar;
-
 timer countDownTimer;
 int timeLeft;
 float stage;
@@ -22,9 +21,9 @@ void setup() {
 
   waterVid.loop();
 
-  stage = 1;
+  stage = 1;                        //the different stages of the game (startscreen, gameplay and endscreen)
   countDownTimer = new timer(1000); //count in 1000 miliseconds
-  timeLeft = 60;    //timer in 60 sec
+  timeLeft = 60;    //timer for 60 sec
 
   for (int i=0; i<boatcount; i++) {
     boat[i] = new People(random (100, width-100), random (100, height-100), random (360));
@@ -71,8 +70,8 @@ void draw() {
       String t = "Your score: " + bar.result();
       textAlign(LEFT);
       textSize(20);
-      fill(255);
-      text(t, 600, 50);
+      fill(150, 50, 250);
+      text(t, 800, 300);
     }
   }
 }

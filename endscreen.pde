@@ -1,3 +1,6 @@
+//end screen is an image created in illustrator.
+//it is loaded with the right dimensions 
+
 class endscreen {
   PImage endscreen;
 

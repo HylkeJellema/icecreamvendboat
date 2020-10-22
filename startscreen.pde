@@ -1,3 +1,6 @@
+//start screen is an image created in illustrator.
+//it is loaded with the right dimensions 
+
 class startscreen {
   PImage startscreen;
 
