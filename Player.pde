@@ -1,7 +1,7 @@
 class Player {
 
   float xPos, yPos;
-  int direction;
+  float direction;
   PImage boat;
   BoatParticles parti;
   int speed;
@@ -25,7 +25,8 @@ class Player {
     imageMode(CORNER);
     popMatrix();
     if (direction < 90 && direction >0) {
-      xPos = xPos - (direction/90);
+      xPos = xPos + (direction/90);
+      yPos = yPos  - (90/direction);
     }
   }
   void left() {
