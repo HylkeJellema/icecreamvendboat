@@ -9,8 +9,8 @@ timer countDownTimer;
 int timeLeft;
 
 float stage;
-int peoplecount = 10;
-cpu[] people = new cpu[peoplecount]; 
+float boatcount = 10;
+cpu[] boat = new cpu[10]; 
 
 
 void setup() {
@@ -28,8 +28,8 @@ void setup() {
   countDownTimer = new timer(1000); //count in 1000 miliseconds
   timeLeft = 60;
 
-  for (int i=0; i<peoplecount; i++) {
-    people[i] = new cpu(random (100, width-100), random (100, height-100), random (360));
+  for (int i=0; i<boatcount; i++) {
+    boat[i] = new cpu(random (100, width-100), random (100, height-100), random (360));
   }
 }
 
@@ -44,10 +44,10 @@ void draw() {
   //alles voor game
   if (stage==2) {
     image(waterVid, 0, 0, 1280, 720);
-    for (int i=0; i<peoplecount; i++) { 
-      people[i].display();
-    } 
     player.display();
+    for (int i=0; i<boatcount; i++) { 
+      boat[i].display();
+    } 
     bar.display();
     //timer
 
@@ -85,5 +85,10 @@ void keyPressed() {
   }  
   if (key == 'd') {
     player.right();
+  }
+  if (key == ' ') {
+    for (int i=0; i<boatcount; i++) { 
+      boat[i].checkRemove();
+    }
   }
 }

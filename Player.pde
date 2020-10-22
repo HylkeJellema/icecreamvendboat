@@ -53,4 +53,10 @@ class Player {
       direction= direction + 1*speed;
     }
   }
+  float posX() {
+    return xPos;
+  }  
+  float posY() {
+    return yPos;
+  }
 }
