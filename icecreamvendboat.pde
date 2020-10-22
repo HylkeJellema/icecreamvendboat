@@ -29,7 +29,7 @@ void setup() {
   timeLeft = 60;
 
   for (int i=0; i<boatcount; i++) {
-    boat[i] = new cpu(random (0, width), random (0, height));
+    boat[i] = new cpu(random (100, width-100), random (100, height-100), random (360));
   }
 }
 
@@ -79,8 +79,8 @@ void movieEvent(Movie m) {
   m.read();
 }
 
+
 void keyPressed() {
-  bar.barPressed();
 
   if (key == 'a') {
     player.left();
@@ -88,8 +88,4 @@ void keyPressed() {
   if (key == 'd') {
     player.right();
   }
-}
-
-void keyReleased() {
-  bar.barReleased();
 }

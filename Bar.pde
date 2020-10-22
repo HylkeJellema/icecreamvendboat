@@ -6,23 +6,16 @@ class Bar {
   float barLength;
   float progress;
 
-  boolean deliveryDone;
-  boolean [] keys = new boolean[1000000];
-
 
 
   Bar() {
     barLength = 0;
-    progress = 160;
-
-    if (deliveryDone == true) {
-      progress = progress + 20;
-    }
+    progress = 0;
   }
 
 
   void display() {
-    delivery();
+
     stroke(0);
     strokeWeight(1);
 
@@ -52,19 +45,7 @@ class Bar {
     popMatrix();
   }
 
-  void delivery() {
-    if (progress <= 259) {
-      if (keys[' ']) {
-        deliveryDone = true;
-      }
-    }
-  }
-
-  void barPressed() {
-    keys[key] = true;
-  }
-
-  void barReleased() {
-    keys[key] = false;
+  void addProgress() {
+    progress = progress + 20;
   }
 }
