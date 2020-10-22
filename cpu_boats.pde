@@ -1,4 +1,5 @@
 class cpu {
+
   float x_, y_;
   PImage img;
 
