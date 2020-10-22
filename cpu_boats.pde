@@ -3,7 +3,7 @@ class cpu {
   PImage img;
 
   cpu (float xpos, float ypos, float rotate) {
-    img = loadImage("img/boat1.png");
+    img = loadImage("img/people.png");
     x_ = xpos;
     y_ = ypos;
     rotation = rotate;
