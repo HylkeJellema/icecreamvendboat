@@ -50,8 +50,8 @@ class Bar {
     progress = progress + 26;
   }
   
-  void result() {
-    score = progress / 26;
+  int result() {
+    return progress / 26;
   }
   
   
