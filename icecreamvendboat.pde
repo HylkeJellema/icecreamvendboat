@@ -1,15 +1,21 @@
+
 import processing.video.*;
 Movie waterVid;
 Player player;
 startscreen startscreen1;
+Bar bar;
+
 float stage;
+
 
 void setup() {
   size(1280, 720);
   waterVid = new Movie(this, "vid/water.mp4");
   player = new Player();
-  waterVid.loop();
   startscreen1 = new startscreen();
+    
+  waterVid.loop();
+
   stage = 1;
 }
 
@@ -24,8 +30,26 @@ void draw() {
     image(waterVid, 0, 0, 1280, 720);
     player.display();
   }
+=======
+  bar = new Bar();
+}
+
+void draw() {
+  image(waterVid, 0, 0, 1280, 720);
+  
+  player.display();
+  bar.display();
+>>>>>>> Stashed changes
 }
 
 void movieEvent(Movie m) {
   m.read();
+}
+
+void keyPressed(){
+  bar.barPressed();
+}
+
+void keyReleased(){
+  bar.barReleased();
 }
