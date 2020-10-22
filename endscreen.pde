@@ -7,6 +7,5 @@ class endscreen {
 
   void display() {
     image(endscreen, 0, 0, 1280, 720);
-    //String score = "Score: ";
   }
 }
