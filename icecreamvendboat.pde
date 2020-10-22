@@ -19,12 +19,14 @@ void setup() {
 }
 
 void draw() {
+  //alles voor start scherm
   if (stage == 1) {
     startscreen1.display();
     if (keyPressed) {
       stage = stage +1;
     }
   } 
+  //alles voor game
   if (stage==2) {
     image(waterVid, 0, 0, 1280, 720);
     player.display();

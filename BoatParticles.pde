@@ -3,14 +3,14 @@ class BoatParticles {
   float xPos, yPos;
   boolean start = false;
 
-  BoatParticles(int x, int y) {
+  BoatParticles() {
+  }
+  void display(float x, float y) {
     xPos= x;
     yPos= y;
-  }
-  void display() {
     if (start) {
       fill(255);
-      ellipse(252, 144, 72, 72);
+      circle(xPos, yPos, 10);
     }
   }
   void startGenerate() {
