@@ -3,6 +3,7 @@ class Boatscpu {
 PImage img;
 
   Boatscpu () {
+  img = new Image (this, "vid/water.mp4");
   }
 
   void display () {
