@@ -3,6 +3,8 @@ Movie waterVid;
 Player player;
 startscreen startscreen1;
 float stage;
+float boatcount = 10;
+Boatscpu[] boat = new Boatscpu[10];
 
 void setup() {
   size(1280, 720);
@@ -11,6 +13,9 @@ void setup() {
   waterVid.loop();
   startscreen1 = new startscreen();
   stage = 1;
+  if (int i=0; i<boatcount; i++) {
+    boat[i] = new Boatscpu();
+  }
 }
 
 void draw() {
