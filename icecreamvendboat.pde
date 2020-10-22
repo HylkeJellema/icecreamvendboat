@@ -44,6 +44,7 @@ void draw() {
   if (stage==2) {
     image(waterVid, 0, 0, 1280, 720);
     player.display();
+    bar.display();
     //timer
 
     String s = "Time left: " + timeLeft;
@@ -69,7 +70,7 @@ void draw() {
       fill(0);
       text(t, 600, 350);
     }
-    bar.display();
+    
   }
 
 
