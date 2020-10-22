@@ -48,7 +48,6 @@ void draw() {
     } 
     bar.display();
     //timer
-
     String s = "Time left: " + timeLeft;
     textAlign(LEFT);
     textSize(20);
@@ -61,20 +60,19 @@ void draw() {
       } else {
         stage = stage +1;
       }
-      if (bar.progress == 260){
+      if (bar.result() == 10) {
         stage = stage +1;
       }
     }
 
-    //tijd is om 
+    //Endscreen 
     if (stage==3) {
       endscreen.display();
-      String t = "Your score: " + bar.progress;
-    textAlign(LEFT);
-    textSize(20);
-    fill(255);
-    text(t, 600, 50);
-      
+      String t = "Your score: " + bar.result();
+      textAlign(LEFT);
+      textSize(20);
+      fill(255);
+      text(t, 600, 50);
     }
   }
 }
