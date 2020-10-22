@@ -6,6 +6,8 @@ startscreen startscreen1;
 Bar bar;
 
 float stage;
+float boatcount = 10;
+Boatscpu[] boat = new Boatscpu[10];
 
 
 void setup() {
@@ -17,6 +19,9 @@ void setup() {
   waterVid.loop();
 
   stage = 1;
+  if (int i=0; i<boatcount; i++) {
+    boat[i] = new Boatscpu();
+  }
 }
 
 void draw() {
