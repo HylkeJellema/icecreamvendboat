@@ -12,14 +12,14 @@ class Player {
     yPos= 600;
     direction = 0;
     speed = 1;
-    boat = loadImage("img/player.png");
+    boat = loadImage("img/player2.png");
   }
   void display() {
     pushMatrix();
     imageMode(CENTER);
     translate(xPos, yPos);
     rotate(radians(direction));
-    image(boat, 0, 0);
+    image(boat, 0, 0,150,150);
     imageMode(CORNER);
     popMatrix();
     if (direction <= 90 && direction >= 0) {
